@@ -10,15 +10,9 @@ import com.javarush.akishina.taskmanager.repository.entity.TaskEntity;
 import com.javarush.akishina.taskmanager.repository.entity.UserEntity;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
-import org.apache.catalina.User;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @Service
 @RequiredArgsConstructor
@@ -30,9 +24,7 @@ public class TaskService {
     public List<TaskResponseDto> findAll() {
 
         List<TaskResponseDto> taskResponseDtoList = new ArrayList<>();
-        taskRepository.findAll().forEach(t -> {
-            taskResponseDtoList.add(mapEntityToResponseDto(t));
-        });
+        taskRepository.findAll().forEach(t -> taskResponseDtoList.add(mapEntityToResponseDto(t)));
 
         return taskResponseDtoList;
     }

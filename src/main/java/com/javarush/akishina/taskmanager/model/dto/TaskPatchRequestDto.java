@@ -1,8 +1,6 @@
 package com.javarush.akishina.taskmanager.model.dto;
 
 import com.javarush.akishina.taskmanager.model.type.TaskStatus;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
